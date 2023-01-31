@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" routerLink="/recipes">Recipes Book</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" *ngIf="isAuthenticated">
+                    <a routerLink="/recipes">Recipes</a>
+                </li>
+                <li routerLinkActive="active" *ngIf="!isAuthenticated">
+                    <a routerLink="/auth">Authentication</a>
+                </li>
+
+                <li routerLinkActive="active" *ngIf="isAuthenticated">
+                    <a routerLink="/shopping-list">Shopping List</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li *ngIf="isAuthenticated">
+                    <a style="cursor: pointer;" (click)="onLogout()">Logout </a>
+                </li>
+                <li *ngIf="isAuthenticated" class="dropdown" appDropdown>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false"> Manage Data <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a (click)="onSaveData()">Save Data</a></li>
+                        <li><a (click)="onFetchData()">Fetch Data</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

@@ -1,0 +1,8 @@
+<a class="list-group-item clearfix" routerLink="{{recipeData.id}}" routerLinkActive="active">
+    <span class="pull-right">
+        <img style="max-width: 60px;" [src]="recipeData.image" class="img-responsive" alt="">
+    </span>
+
+    <h4 class="list-group-item-heading">{{ recipeData.name }}</h4>
+    <p class="list-group-item-text">{{ recipeData.description }}</p>
+</a>

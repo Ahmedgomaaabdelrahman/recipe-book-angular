@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form (ngSubmit)="addNewIngredient(f)" #f="ngForm">
+            <div class="form-group">
+                <label for="nameInput">Name</label>
+                <input type="text" class="form-control" id="nameInput" required placeholder="Name" ngModel
+                    name="nameInput">
+            </div>
+            <div class="form-group">
+                <label for="amountInput">Amount</label>
+                <input type="text" class="form-control" id="amountInput" pattern="^[1-9]+[0-9]*$" required
+                    placeholder="Amount" ngModel name="amountInput">
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!f.valid">{{ editMode ? 'Edit': 'Add'}}</button>
+            <button type="button" class="btn btn-danger" *ngIf="editMode" (click)="deleteIngredient()">Delete</button>
+            <button type="button" class="btn btn-default" (click)="resetSLForm()">Clear</button>
+        </form>
+    </div>
+</div>
