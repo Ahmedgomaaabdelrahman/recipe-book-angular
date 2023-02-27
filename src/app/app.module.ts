@@ -19,6 +19,8 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { AuthComponent } from './auth/auth.component';
 import { SpinnerComponent } from './shared/spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor-service';
+import { AlertComponent } from './shared/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 
 
 
@@ -37,6 +39,8 @@ import { AuthInterceptorService } from './auth/auth-interceptor-service';
     RecipeEditComponent,
     AuthComponent,
     SpinnerComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
